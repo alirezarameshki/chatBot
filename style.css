@@ -1,0 +1,218 @@
+    
+        * {
+            box-sizing: border-box;
+            margin: 0; 
+            font-family: sans-serif;
+        }
+
+        .message , .response {
+            font-size: 16px;
+        }
+
+        body {
+          background-color :#1675e0;
+            font-family: Arial, sans-serif;  
+            color: white;  
+            display: flex;
+            flex-direction: column;
+            height: 100vh; 
+           
+           
+        }
+
+        .user {
+            width: 100%;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin: 0;
+            color: black;
+            position: fixed;
+            z-index: 1000;
+            border-bottom: 1px solid gray;
+        }
+
+        .user p{
+            font-weight: 400;
+            font-size: 1.1rem;
+
+        }
+        .user img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-size: cover;
+        }
+
+        .setting{
+            cursor: pointer;
+            font-size: 1.4rem;
+        }
+
+   
+        
+       .message_box{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 5px;
+        overflow: auto;
+        outline: none;
+        margin-top: 70px;
+        margin-bottom: 70px;
+       }
+
+       .message_box::-webkit-scrollbar {
+        display: none; 
+    }
+
+        .response {
+            direction: rtl;
+            padding: 12px;
+            width: fit-content;
+            color: black;
+            
+            border-radius: 12px;
+            position: relative;
+          
+             
+        }
+        .write {
+            direction: rtl;
+            padding: 12px;
+            width: fit-content;
+            color: black; 
+            background-color: #42e47d;
+            position: relative;
+             right: 0;
+             border-radius: 12px;
+             align-self: flex-end;
+        }
+
+         
+        .response p, .response ul, .response ol {
+            margin-bottom: 10px; 
+            line-height: 1.6;  
+        }
+
+        .response h1, .response h2, .response h3, .response h4, .response h5, .response h6 {
+            margin-bottom: 0.5em; 
+            margin-top: 1em;  
+        }
+
+       
+        .response a {
+            color: #ADD8E6;  
+            text-decoration: none;  
+        }
+
+        .response a:hover {
+            text-decoration: underline;  
+        }
+ 
+        .message {
+            padding: 15px;
+            display: flex;  
+            align-items: center;   
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 2000;
+            border-radius: 15px;
+            justify-content: center;
+            
+        }
+
+        .type_message {
+            padding: 15px;
+            border: 0;
+            width: 75%; 
+            margin-right: 10px;
+            font-size: 1rem;
+            outline: none;
+          
+            border-radius: 15px;
+        }
+
+        .send_message {
+            padding: 12px;
+            background-color: #007bff;  
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.2s ease; 
+            border-radius: 50%;
+        
+        }
+
+        .send_message:hover {
+            background-color: #0056b3;  
+        }
+
+        .loading{
+            width: 30px;
+            height: 30px;
+            border-top:1px solid black;
+            border-radius: 50%;
+            animation: identifier 0.8s infinite linear;
+            display: inline-block;
+        }
+
+        .response p{
+            display: inline-block;
+            text-align: center;
+        }
+        @keyframes identifier {
+            0%{
+                rotate: 360deg;
+                
+            }
+        }
+
+        .background {
+            background-color: white;
+             
+        }
+
+        .menu{
+            position: absolute;
+            background-color: rgba(90, 88, 88, 0.404);
+            width: 250px;
+            height: 150px;
+            justify-content: center;
+            align-items: center;
+            right: 25px;
+            top: 70px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 0px 4px black;
+            display: none;
+        }
+
+        .menu_item{
+            height: 50px;
+           background-color: white;
+           color: black;
+           display: flex;
+           align-items: center;
+           padding-left: 5px;
+           transition: all 0.8s;
+           cursor: pointer;
+           gap: 5px;
+        }
+
+        .menu_item i{
+            color: rgb(110, 109, 109);
+            font-size: 18px;
+        }
+
+        .menu_item:hover{
+            background-color: rgb(216, 213, 213);
+            transition: all 0.5s;
+        }
