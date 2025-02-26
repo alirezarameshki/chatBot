@@ -1,6 +1,32 @@
 const send_message = document.querySelector(".send_message")
 const input = document.querySelector(".type_message");
 const message_box = document.querySelector(".message_box")
+const setting = document.querySelector(".setting")
+const menu_item = document.querySelector(".menu_item");
+menu_item.classList.add("display")
+ 
+setting.addEventListener("click",()=>{
+    if(menu_item.classList.contains("display")){
+        menu_item.classList.remove("display")
+    }
+    else{
+        menu_item.classList.add("display")
+    }
+})
+
+menu_item.addEventListener("click", () => {
+    
+    localStorage.clear()
+
+    location.reload()
+
+    if(menu_item.classList.contains("display")){
+        menu_item.classList.remove("display")
+    }
+    else{
+        menu_item.classList.add("display")
+    }
+});
 
 const Get_message = JSON.parse(localStorage.getItem("message")) || []
 const Get_response = JSON.parse(localStorage.getItem("response")) || []
@@ -26,14 +52,19 @@ async function sendMessage() {
        const apiResponse = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
-          "Authorization": "Bearer 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",
-          "HTTP-Referer": "chat.com", // Optional. Site URL for rankings on openrouter.ai.
-          "X-Title": "deepseek", // Optional. Site title for rankings on openrouter.ai.
+          "Authorization": "Bearer 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",
+          "HTTP-Referer": "<YOUR_SITE_URL>", // Optional. Site URL for rankings on openrouter.ai.
+          "X-Title": "<YOUR_SITE_NAME>", // Optional. Site title for rankings on openrouter.ai.
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          "model": "deepseek/deepseek-r1:free",
-          "messages": [{"role": "user","content": input.value}]
+          "model": "google/gemini-2.0-flash-lite-preview-02-05:free",
+          "messages": [
+            {"role": "user", "content": input.value}
+          ],
+          "top_p": 1,
+          "temperature": 0.5,
+          "repetition_penalty": 1
         })
       });
 
