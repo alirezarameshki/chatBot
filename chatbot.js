@@ -54,7 +54,7 @@ async function sendMessage() {
 
         
        responseDiv.classList.add("background")
-       responseDiv.innerHTML =  marked.parse(markdownText)
+       responseDiv.innerHTML =  "hey there"
     console.log(markdownText)
   
    } catch (error) {
