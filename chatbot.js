@@ -60,7 +60,7 @@ async function sendMessage() {
    } catch (error) {
        
        console.error("Error:", error);
-       responseDiv.innerHTML = "aAn error occurred. Please check the console for details.";
+       responseDiv.innerHTML = "error connection";
 
    }
 
