@@ -24,18 +24,23 @@ async function sendMessage() {
    try {
        
        const apiResponse = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-           method: "POST",
-           headers: {
-               "Authorization": "Bearer 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",  
-               "HTTP-Referer": "optional",  
-               "X-Title": "optional",  
-               "Content-Type": "application/json"
-           },
-           body: JSON.stringify({
-               "model": "deepseek/deepseek-r1:free",
-               "messages": [{"role": "user", "content": input.value}]
-           })
-       });
+  method: "POST",
+  headers: {
+    "Authorization": "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",
+    "HTTP-Referer": "<YOUR_SITE_URL>", // Optional. Site URL for rankings on openrouter.ai.
+    "X-Title": "<YOUR_SITE_NAME>", // Optional. Site title for rankings on openrouter.ai.
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    "model": "deepseek/deepseek-chat:free",
+    "messages": [
+      {
+        "role": "user",
+        "content": input.value
+      }
+    ]
+  })
+});
 
        
        if (!apiResponse.ok) {
