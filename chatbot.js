@@ -44,8 +44,6 @@ async function sendMessage() {
 
    responseDiv.appendChild(loading)
    message_box.scrollTop = message_box.scrollHeight
-
-  
   
    try {
        
